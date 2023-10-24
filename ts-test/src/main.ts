@@ -1,7 +1,20 @@
-// 초기화된 변수 `num`
-let num = 12
+// 1)
+const el = document.querySelector('body')
+el.textContent = 'Hello world!'
 
-// 기본값이 지정된 매개변수 `b` + 반환 값이 확실한 함수 `add`
-function add(a: number, b:number = 2) {
-  return a + b
+// 2)
+function getNumber(x: number | null | undefined) {
+  return Number(x?.toFixed(2)
 }
+getNumber(3.1415926535)
+getNumber(null)
+
+// 3)
+function getValue(x: string | number, isNumber: boolean) {
+  if (isNumber) {
+    return Number(x.toFixed(2))
+  }
+  return (x as string).toUpperCase()
+}
+getValue('hello world', false)  // 'HELLO WORLD'
+getValue(3.1415926535, true)  // 3.14

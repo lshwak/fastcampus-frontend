@@ -575,9 +575,14 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"jeorp":[function(require,module,exports) {
-let hello = "Hello world!";
-hello = "Hello~";
-console.log(hello);
+function add(val) {
+    let res = "Result => ";
+    if (typeof val === "number") res += val.toFixed(2);
+    else res += val.toUpperCase();
+    console.log(res);
+}
+add(3.141592);
+add("hello world");
 
 },{}]},["d8lhj","jeorp"], "jeorp", "parcelRequire5b05")
 

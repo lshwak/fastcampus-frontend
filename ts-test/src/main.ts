@@ -1,12 +1,17 @@
-function add(val: string | number) {
-  let res = 'Result => '
-  if (typeof val === 'number') {
-    res += val.toFixed(2)
-  } else {
-    res += val.toUpperCase()
-  }
-  console.log(res)
+interface GetName {
+  (param: string): string
 }
-
-add(3.141592)
-add('hello world')
+interface User {
+  name: string
+  age: number
+  getName: GetName
+}
+const heropy: User = {
+  name: 'Heropy',
+  age: 35,
+  getName(message: string) {
+    console.log(message)
+    return this.name
+  }
+}
+heropy.getName('Hello~')

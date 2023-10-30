@@ -1,17 +1,18 @@
-interface GetName {
-  (param: string): string
-}
-interface User {
-  name: string
-  age: number
-  getName: GetName
-}
-const heropy: User = {
-  name: 'Heropy',
-  age: 35,
-  getName(message: string) {
-    console.log(message)
-    return this.name
+  interface Fruits {
+    [item: number]: string
   }
-}
-heropy.getName('Hello~')
+  const fruits: Fruits = ['Apple', 'Banana', 'Cherry']
+  console.log(fruits[1])
+
+  interface User {
+    [key: string]: unknown
+    name: string
+    age: number
+  }
+  const heropy: User = {
+    name: 'Heropy',
+    age: 35
+  }
+  heropy['isValid'] = true
+  heropy['email'] = ['thesecon@gmail.com', 'test@gmail.com']
+  console.log(heropy)

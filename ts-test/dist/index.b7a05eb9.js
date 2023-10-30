@@ -575,14 +575,22 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"jeorp":[function(require,module,exports) {
-function add(val) {
-    let res = "Result => ";
-    if (typeof val === "number") res += val.toFixed(2);
-    else res += val.toUpperCase();
-    console.log(res);
-}
-add(3.141592);
-add("hello world");
+const fruits = [
+    "Apple",
+    "Banana",
+    "Cherry"
+];
+console.log(fruits[1]);
+const heropy = {
+    name: "Heropy",
+    age: 35
+};
+heropy["isValid"] = true;
+heropy["email"] = [
+    "thesecon@gmail.com",
+    "test@gmail.com"
+];
+console.log(heropy);
 
 },{}]},["d8lhj","jeorp"], "jeorp", "parcelRequire5b05")
 

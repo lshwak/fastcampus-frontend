@@ -575,11 +575,14 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"jeorp":[function(require,module,exports) {
-const fullName = {
-    firstName: "Tomas",
-    middleName: "Sean",
-    lastName: "Connery"
+const cat = {
+    name: "Lucy",
+    age: 3
 };
+function hello(message) {
+    console.log(`Hello ${this.name}, ${message}`);
+}
+hello.call(cat, "You are pretty awesome!");
 
 },{}]},["d8lhj","jeorp"], "jeorp", "parcelRequire5b05")
 

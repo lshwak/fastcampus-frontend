@@ -1,16 +1,13 @@
-type TypeUser = {
+interface Cat {
   name: string
   age: number
-  isValid: boolean
 }
-interface InterfaceUser {
-  name: string
-  age: number
-  isValid: boolean
+const cat: Cat = {
+  name: 'Lucy',
+  age: 3
 }
 
-const heropy: ?? = {
-  name: 'Heropy',
-  age: 35,
-  isValid: true
+function hello(this: Cat, message: string) {
+  console.log(`Hello ${this.name}, ${message}`)
 }
+hello.call(cat, 'You are pretty awesome!') 

@@ -1,21 +1,14 @@
-interface Payload {
-  [key: string]: unknown
+interface FullName {
+  firstName: string
+  lastName: string
 }
-function logValues(payload: Payload) {
-  for (const key in payload) {
-    console.log(payload[key])
-  }
+interface FullName {
+  middleName: string
+  lastName: string
 }
 
-interface User {
-  [key: string]: unknown
-  name: string
-  age: number
-  isValid: boolean
+const fullName: FullName = {
+  firstName: 'Tomas',
+  middleName: 'Sean',
+  lastName: 'Connery'
 }
-const heropy: User = {
-  name: 'Heropy',
-  age: 35,
-  isValid: true
-}
-logValues(heropy)

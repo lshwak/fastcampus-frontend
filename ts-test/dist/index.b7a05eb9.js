@@ -575,22 +575,11 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"jeorp":[function(require,module,exports) {
-const fruits = [
-    "Apple",
-    "Banana",
-    "Cherry"
-];
-console.log(fruits[1]);
-const heropy = {
-    name: "Heropy",
-    age: 35
+const fullName = {
+    firstName: "Tomas",
+    middleName: "Sean",
+    lastName: "Connery"
 };
-heropy["isValid"] = true;
-heropy["email"] = [
-    "thesecon@gmail.com",
-    "test@gmail.com"
-];
-console.log(heropy);
 
 },{}]},["d8lhj","jeorp"], "jeorp", "parcelRequire5b05")
 

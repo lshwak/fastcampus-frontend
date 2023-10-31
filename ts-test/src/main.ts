@@ -1,14 +1,16 @@
-interface FullName {
-  firstName: string
-  lastName: string
+type TypeUser = {
+  name: string
+  age: number
+  isValid: boolean
 }
-interface FullName {
-  middleName: string
-  lastName: string
+interface InterfaceUser {
+  name: string
+  age: number
+  isValid: boolean
 }
 
-const fullName: FullName = {
-  firstName: 'Tomas',
-  middleName: 'Sean',
-  lastName: 'Connery'
+const heropy: ?? = {
+  name: 'Heropy',
+  age: 35,
+  isValid: true
 }

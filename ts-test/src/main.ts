@@ -1,20 +1,26 @@
-function add1(a: string, b: string) {
-  return a + b
+class UserA {
+  constructor(
+    public first: string, 
+    public last: string, 
+    public age: number) {
+  }
+  protected getAge() {
+    return `${this.first} ${this.last} is ${this.age}`
+  }
 }
-function add2(a: number, b: number) {
-  return a + b
+class UserB extends UserA {
+  getAge() {
+    return `${this.first} ${this.last} is ${this.age}`
+  }
 }
-add1('hello', 'world') // 'hello world'
-add2(1, 2) // 3
-add1('hello', 2)
-add2('hello', 2)
+class UserC extends UserB {
+  getAge() {
+    return `${this.first} ${this.last} is ${this.age}`
+  }
+}
 
-function add(a: string, b: string): string
-function add(a: number, b: number): number
-function add(a: any, b: any) {
-  return a + b
-}
-add('hello', 'world') // 'hello world'
-add(1, 2) // 3
-add('hello', 2)
-add(1, 'world')
+const neo = new UserA('Neo', 'Andercon', 102)
+console.log(neo.first)
+console.log(neo.last)
+console.log(neo.age)
+neo.getAge()

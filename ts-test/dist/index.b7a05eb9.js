@@ -575,14 +575,23 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"jeorp":[function(require,module,exports) {
-const cat = {
-    name: "Lucy",
-    age: 3
-};
-function hello(message) {
-    console.log(`Hello ${this.name}, ${message}`);
+function toArray(a, b) {
+    return [
+        a,
+        b
+    ];
 }
-hello.call(cat, "You are pretty awesome!");
+console.log(toArray("Neo", "Anderson"), toArray(1, 2), toArray(true, false), toArray({
+    x: 1
+}, {
+    x: 2
+}), toArray([
+    1,
+    2
+], [
+    3,
+    4
+]));
 
 },{}]},["d8lhj","jeorp"], "jeorp", "parcelRequire5b05")
 

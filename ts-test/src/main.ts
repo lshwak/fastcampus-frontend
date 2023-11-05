@@ -1,26 +1,17 @@
-class UserA {
-  constructor(
-    public first: string, 
-    public last: string, 
-    public age: number) {
-  }
-  protected getAge() {
-    return `${this.first} ${this.last} is ${this.age}`
-  }
+interface Obj {
+ x: number 
 }
-class UserB extends UserA {
-  getAge() {
-    return `${this.first} ${this.last} is ${this.age}`
-  }
-}
-class UserC extends UserB {
-  getAge() {
-    return `${this.first} ${this.last} is ${this.age}`
-  }
+type Arr = [number, number]
+
+
+function toArray<T>(a: T, b: T) {
+  return [a, b]
 }
 
-const neo = new UserA('Neo', 'Andercon', 102)
-console.log(neo.first)
-console.log(neo.last)
-console.log(neo.age)
-neo.getAge()
+console.log(
+  toArray('Neo', 'Anderson'),
+  toArray(1, 2),
+  toArray(true, false),
+  toArray({x: 1}, {x: 2}),
+  toArray<Arr>([1, 2], [3, 4])
+)

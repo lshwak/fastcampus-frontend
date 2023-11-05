@@ -1,17 +1,27 @@
-interface Obj {
- x: number 
+class User<P> { 
+  constructor(public payload: P) {
+  }
+  getPayload() {
+    return this.payload
+  }
 }
-type Arr = [number, number]
-
-
-function toArray<T>(a: T, b: T) {
-  return [a, b]
+interface UserAType {
+  name: string
+  age: number
+  isValid: boolean
 }
-
-console.log(
-  toArray('Neo', 'Anderson'),
-  toArray(1, 2),
-  toArray(true, false),
-  toArray({x: 1}, {x: 2}),
-  toArray<Arr>([1, 2], [3, 4])
-)
+interface UserBType {
+  name: string
+  age: number
+  emails: string[]
+}
+const heropy = new User<UserAType>({
+  name: 'Heropy',
+  age: 85,
+  isValid: true,
+})
+const neo = new User<UserBType> ({
+  name: 'Neo',
+  age: 102,
+  emails: ['neo@gmail.com']
+})

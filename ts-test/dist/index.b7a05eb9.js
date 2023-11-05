@@ -575,23 +575,26 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"jeorp":[function(require,module,exports) {
-function toArray(a, b) {
-    return [
-        a,
-        b
-    ];
+class User {
+    constructor(payload){
+        this.payload = payload;
+    }
+    getPayload() {
+        return this.payload;
+    }
 }
-console.log(toArray("Neo", "Anderson"), toArray(1, 2), toArray(true, false), toArray({
-    x: 1
-}, {
-    x: 2
-}), toArray([
-    1,
-    2
-], [
-    3,
-    4
-]));
+const heropy = new User({
+    name: "Heropy",
+    age: 85,
+    isValid: true
+});
+const neo = new User({
+    name: "Neo",
+    age: 102,
+    emails: [
+        "neo@gmail.com"
+    ]
+});
 
 },{}]},["d8lhj","jeorp"], "jeorp", "parcelRequire5b05")
 

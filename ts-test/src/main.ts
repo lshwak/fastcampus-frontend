@@ -1,7 +1,12 @@
-import _ from 'lodash'
+import { getFullName, User } from './user'
 
-const str = 'the brown fox jumps over the lazy dog.'
+const heropy: User = {
+  firstName: 'Heropy',
+  lastName: 'Kim',
+  age: 85,
+  isValid: true
+}
+const fullName = getFullName(heropy)
 
-console.log(_.camelCase(str))
-console.log(_.snakeCase(str))
-console.log(_.kebabCase(str))
+console.log(fullName)
+console.log(heropy.isValid)

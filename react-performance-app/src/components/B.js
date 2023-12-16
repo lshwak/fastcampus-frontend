@@ -23,6 +23,8 @@ const List = React.memo(({posts}) => {
 })
 
 const B = ({ message, posts}) => {
+  console.log('B component is Rendering');
+  const testFunction = (() => {}, []);
   return (
     <div>
       <h1>B Component</h1>

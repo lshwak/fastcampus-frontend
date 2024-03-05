@@ -12,7 +12,7 @@ const DetailPage = () => {
       const response = await axios.get(
         `/movie/${movieId}`
       )
-      console.log('response', response);
+
       setMovie(response.data);
     }
     fetchData();

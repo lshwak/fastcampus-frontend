@@ -5,13 +5,16 @@ import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signO
 
 const Nav = () => {
 
+  const initialUserData = localStorage.getItem('userData') ?
+    JSON.parse(localStorage.getItem('userData')) : {}; 
+
   const [show, setShow] = useState(false);
   const { pathname } = useLocation();
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState(initialUserData);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -23,7 +26,7 @@ const Nav = () => {
         navigate("/");
       }
     })
-  }, [])
+  }, [auth, navigate, pathname])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -51,6 +54,7 @@ const Nav = () => {
     signInWithPopup(auth, provider)
     .then(result => {
       setUserData(result.user);
+      localStorage.setItem("useData", JSON.stringify(result.user));
     })
     .catch(error => {
       console.log(error)
@@ -134,7 +138,7 @@ const SignOut = styled.div`
   }
 `;
 
-const UserImg = styled.div`
+const UserImg = styled.img`
   border-radius: 50%;
   width: 100%;
   height: 100%;
